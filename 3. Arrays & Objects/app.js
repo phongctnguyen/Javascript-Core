@@ -61,3 +61,21 @@ const animalPairs = [
 ];
 
 console.log(animalPairs[1][1]);
+
+// create object
+const fitBitData = {
+  totalSteps: 308727,
+  totalMiles: 211.7,
+  avgGoodSleep: '2:13',
+  10: 'ten',
+  'nguyen phong': 'dev'
+}
+
+console.log(fitBitData);
+
+// accessing data
+console.log(fitBitData.totalSteps);
+console.log(fitBitData['totalMiles']);
+console.log(fitBitData[10]); // ten
+console.log(fitBitData['10']); // ten
+console.log(fitBitData['nguyen phong']);
