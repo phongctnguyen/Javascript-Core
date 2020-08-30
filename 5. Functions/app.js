@@ -103,7 +103,7 @@ console.log(multiplyBy(4)(3));
 // callback function
 setTimeout(function (){
   console.log('Callback');
-}, 5000);
+}, 1000);
 
 /* array callback method */
 const numbers = [20, 21, 22, 23, 24, 25, 26, 27];
@@ -117,3 +117,50 @@ const doubles = numbers.map(num => {
 })
 console.log(doubles);
 
+// find
+const movies = ['Umbrella Academy', 'The Boys', 'Lucifer', 'The Flash'];
+
+const movie = movies.find(movie => movie.includes('Academy'));
+console.log(movie);
+
+// filter
+const nums = [23, 24, 56, 44, 55, 76, 79, 97];
+
+const evens = nums.filter(num => num % 2 === 0);
+console.log(evens);
+
+// every
+const words = ['dig', 'log', 'ken', 'rob'];
+
+const all3Lets = words.every(word => word.length === 3);
+console.log(all3Lets);
+
+// some
+const someStartWithD = words.some(word => word.indexOf('d') === 0);
+console.log(someStartWithD);
+
+// sort
+const prices = [400.5, 3000, 99.99, 35.99, 12.00, 9500];
+
+const badSort = prices.slice().sort(); // convert to string and stopPropagation();
+const ascSort = prices.slice().sort((a, b) => a - b);
+const descSort = prices.slice().sort((a, b) => b - a);
+
+console.log(badSort, ascSort, descSort);
+
+// reduce
+const product = prices.reduce((total, currentVal) => total * currentVal);
+const product2 = prices.reduce((total, currentVal) => total * currentVal, 2);
+console.log(product, product2);
+
+const maxPrice = prices.reduce((max, currentVal) => Math.max(max, currentVal));
+const minPrice = prices.reduce((min, currentVal) => Math.min(min, currentVal));
+console.log(maxPrice, minPrice);
+
+const votes = ['y', 'y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y'];
+
+const tally = votes.reduce((tally, val) => {
+  tally[val] = (tally[val] || 0) + 1;
+  return tally;
+}, {});
+console.log(tally);
